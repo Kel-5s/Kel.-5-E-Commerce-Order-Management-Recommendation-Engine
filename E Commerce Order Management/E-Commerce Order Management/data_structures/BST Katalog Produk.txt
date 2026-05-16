@@ -1,0 +1,67 @@
+# ── BST Katalog Produk (implementasikan) ─────────────────────
+class BSTNode:
+    def __init__(self, produk: Produk):
+        self.produk = produk
+        self.left: Optional['BSTNode'] = None
+        self.right: Optional['BSTNode'] = None
+
+class BSTKatalog:
+    def __init__(self):
+        self.root: Optional[BSTNode] = None
+
+    def insert(self, produk: Produk) -> None:
+        if self.root is None:
+            self.root = BSTNode(produk)
+        else:
+            self._insert_recursive(self.root, produk)
+    
+    def _insert_recursive(self, node: BSTNode, produk: Produk) -> None:
+        if produk.kode < node.produk.kode:
+            if node.left is None:
+                node.left = BSTNode(produk)
+            else:
+                self._insert_recursive(node.left, produk)
+        else:
+            if node.right is None:
+                node.right = BSTNode(produk)
+            else:
+                self._insert_recursive(node.right, produk)
+
+    def search(self, kode: str) -> Optional[Produk]:
+        return self._search_recursive(self.root, kode)
+    
+    def _search_recursive(self, node: Optional[BSTNode], kode: str) -> Optional[Produk]:
+        if node is None:
+            return None
+        if kode == node.produk.kode:
+            return node.produk
+        elif kode < node.produk.kode:
+            return self._search_recursive(node.left, kode)
+        else:
+            return self._search_recursive(node.right, kode)
+
+    def update_stok(self, kode: str, qty_delta: int) -> bool:
+        return self._update_stok_recursive(self.root, kode, qty_delta)
+    
+    def _update_stok_recursive(self, node: Optional[BSTNode], kode: str, qty_delta: int) -> bool:
+        if node is None:
+            return False
+        if kode == node.produk.kode:
+            node.produk.stok += qty_delta
+            return True
+        elif kode < node.produk.kode:
+            return self._update_stok_recursive(node.left, kode, qty_delta)
+        else:
+            return self._update_stok_recursive(node.right, kode, qty_delta)
+
+    def inorder(self) -> List[Produk]:
+        result = []
+        self._inorder_recursive(self.root, result)
+        return result
+    
+    def _inorder_recursive(self, node: Optional[BSTNode], result: List[Produk]) -> None:
+        if node is None:
+            return
+        self._inorder_recursive(node.left, result)
+        result.append(node.produk)
+        self._inorder_recursive(node.right, result)
