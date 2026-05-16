@@ -1,0 +1,7 @@
+Kekurangan
+-Queue lambat (O(n))
+-Search produk lambat
+-Cancel order kurang akurat
+-Graph rekomendasi kurang realistis
+-Tidak scalable
+-Banyak linear traversal
