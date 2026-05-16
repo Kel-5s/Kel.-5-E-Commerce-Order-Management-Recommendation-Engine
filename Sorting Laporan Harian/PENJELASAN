@@ -1,1 +1,128 @@
+Pada modul laporan harian, digunakan algoritma sorting untuk mengurutkan data pesanan (Order) agar laporan lebih mudah dianalisis.
 
+Sorting digunakan untuk:
+- melihat transaksi dengan harga terbesar
+- melihat urutan waktu pemesanan
+- mempermudah pembuatan laporan harian
+
+1. Bubble Sort berdasarkan Total Harga
+Fungsi
+bubble_sort_by_harga()
+
+Digunakan untuk:
+
+mengurutkan data order berdasarkan total_harga.
+
+Pada kode ini:
+
+data diurutkan dari harga terbesar ke terkecil (descending).
+Konsep Bubble Sort
+
+Bubble Sort bekerja dengan cara:
+
+membandingkan dua data yang bersebelahan
+lalu menukar posisi jika urutannya salah
+
+Proses ini dilakukan berulang sampai data terurut.
+
+Cara Kerja pada Laporan Harian
+
+Sistem membandingkan:
+
+Order A ↔ Order B
+
+Jika:
+
+harga Order A lebih kecil dari Order B
+
+maka:
+
+posisi ditukar
+
+Sehingga transaksi dengan harga terbesar akan naik ke atas laporan.
+
+Contoh
+
+Sebelum sorting:
+
+10000
+50000
+30000
+
+Sesudah sorting:
+
+50000
+30000
+10000
+Tujuan pada Modul
+
+Bubble Sort digunakan agar:
+
+laporan dapat menampilkan transaksi paling besar terlebih dahulu
+mempermudah analisis pendapatan harian
+membantu melihat order prioritas tinggi
+2. Insertion Sort berdasarkan Waktu
+Fungsi
+insertion_sort_by_waktu()
+
+Digunakan untuk:
+
+mengurutkan order berdasarkan waktu pemesanan (waktu_pesan).
+Konsep Insertion Sort
+
+Insertion Sort bekerja seperti:
+
+menyusun kartu remi di tangan
+
+Data diambil satu per satu lalu:
+
+ditempatkan pada posisi yang sesuai.
+Cara Kerja pada Laporan Harian
+
+Sistem:
+
+mengambil satu order
+membandingkannya dengan order sebelumnya
+menggeser data jika urutannya salah
+memasukkan order ke posisi yang tepat
+Hasil Pengurutan
+
+Data menjadi terurut berdasarkan:
+
+waktu paling awal ke paling akhir
+
+Sehingga laporan transaksi menjadi kronologis.
+
+Contoh
+
+Sebelum:
+
+12:30
+09:15
+10:45
+
+Sesudah:
+
+09:15
+10:45
+12:30
+Tujuan pada Modul
+
+Insertion Sort digunakan agar:
+
+laporan harian tersusun sesuai waktu transaksi
+mempermudah pelacakan aktivitas order
+membantu melihat urutan transaksi pelanggan
+Kesimpulan
+
+Pada modul laporan harian:
+
+Algoritma	Fungsi
+Bubble Sort	Mengurutkan order berdasarkan total harga
+Insertion Sort	Mengurutkan order berdasarkan waktu pemesanan
+
+Kedua sorting membantu sistem menghasilkan laporan yang:
+
+lebih rapi
+lebih mudah dibaca
+lebih mudah dianalisis oleh pengguna maupun admin.
