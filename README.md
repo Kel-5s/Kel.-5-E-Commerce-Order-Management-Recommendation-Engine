@@ -7,7 +7,7 @@
       3.Muhammad Fathir Al Malik   (25051030067)
       4.Muhammad Raykhan Faddillah (25051030057)
 
-   ## MATA KULAIH
+   ## MATA KULIAH
    Algoritma dan Struktur Data  
 S1 Teknik Elektro  
 Universitas Negeri Yogyakarta
