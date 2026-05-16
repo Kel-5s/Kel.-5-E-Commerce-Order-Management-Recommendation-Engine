@@ -35,4 +35,13 @@ projek kali ini kita menggunakan beberapa stuktur data yaitu
 - List (Array Dinamis)
   - Digunakan untuk menyimpan kumpulan data, seperti daftar produk pada generate_produk(), hasil traversal BST, dan daftar rekomendasi produk.
    
-   
+   ## FITUR DARI PROJEK
+- Manajemen Order Pelanggan
+- Pemrosesan Pesanan
+- Pembatalan Order Terakhir
+- Pencarian Produk
+- Update Stok Produk
+- Rekomendasi Produk
+- Riwayat Order Pelanggan
+- Laporan Harian
+- Bantuan Sistem
