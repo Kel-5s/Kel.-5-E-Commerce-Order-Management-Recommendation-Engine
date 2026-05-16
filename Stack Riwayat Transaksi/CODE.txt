@@ -1,0 +1,38 @@
+# ── Stack berbasis Linked List ───────────────────────────────
+class Stack:
+    def _init_(self, kapasitas=10):
+        self.top: Optional[LLNode] = None
+        self._size: int = 0
+        self.kapasitas = kapasitas
+
+    def push(self, data) -> bool:
+        if self._size >= self.kapasitas:
+            return False
+        new_node = LLNode(data)
+        new_node.next = self.top
+        self.top = new_node
+        self._size += 1
+        return True
+
+    def pop(self):
+        if self.top is None:
+            return None
+        data = self.top.data
+        self.top = self.top.next
+        self._size -= 1
+        return data
+
+    def remove_by_condition(self, predicate) -> bool:
+        prev = None
+        current = self.top
+        while current:
+            if predicate(current.data):
+                if prev:
+                    prev.next = current.next
+                else:
+                    self.top = current.next
+                self._size -= 1
+                return True
+            prev = current
+            current = current.next
+        return False
