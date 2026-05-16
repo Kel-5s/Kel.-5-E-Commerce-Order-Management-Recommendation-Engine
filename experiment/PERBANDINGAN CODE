@@ -1,3 +1,4 @@
+BENCHMARK 1
 Kekurangan
 -Queue lambat (O(n))
 -Search produk lambat
@@ -5,3 +6,26 @@ Kekurangan
 -Graph rekomendasi kurang realistis
 -Tidak scalable
 -Banyak linear traversal
+    
+Kelebihan
+-Mudah dipahami
+-Cocok untuk belajar dasar struktur data
+-Implementasi sederhana
+-Debug lebih mudah
+
+BENCHMARK 2
+Kekurangan
+-Lebih kompleks
+-Banyak pointer Linked List
+-BST bisa menjadi O(n) kalau tidak balanced
+-Lebih susah debug
+-Memory lebih besar karena node
+
+KELEBIHAN
+-Lebih efisien
+-Queue optimal O(1)
+-Search lebih cepat
+-Cancel order lebih benar
+-Graph recommendation lebih realistis
+-Cocok untuk skala besar
+-Struktur data lebih profesional
