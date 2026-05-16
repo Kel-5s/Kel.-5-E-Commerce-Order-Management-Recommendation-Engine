@@ -1,2 +1,1 @@
-#PENJELASAN 
--Kode ini adalah implementasi struktur data linked list, lalu dipakai untuk membuat Queue (antrian/FIFO) dan Stack (tumpukan/LIFO). Dalam sistem jualan online (e-commerce), struktur seperti ini sering dipakai untuk mengelola pesanan, pembayaran, pengiriman, atau riwayat aktivitas.
+
