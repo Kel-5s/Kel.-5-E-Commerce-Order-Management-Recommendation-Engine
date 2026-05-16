@@ -1,0 +1,97 @@
+# ── Node Linked List ─────────────────────────────────────────
+class LLNode:
+    def _init_(self, data=None):
+        self.data = data
+        self.next: Optional['LLNode'] = None
+
+# ── Queue berbasis Linked List ───────────────────────────────
+class Queue:
+    """FIFO Queue berbasis Singly Linked List."""
+    def _init_(self):
+        self.head: Optional[LLNode] = None
+        self.tail: Optional[LLNode] = None
+        self._size: int = 0
+
+    def enqueue(self, data) -> None:
+        new_node = LLNode(data)
+        if self.is_empty():
+            self.head = new_node
+        else:
+            self.tail.next = new_node
+        self.tail = new_node
+        self._size += 1
+
+    def dequeue(self):
+        if self.is_empty():
+            return None
+        data = self.head.data
+        self.head = self.head.next
+        self._size -= 1
+        if self.is_empty():
+            self.tail = None
+        return data
+
+    def peek(self):
+        return self.head.data if self.head else None
+
+    def is_empty(self) -> bool:
+        return self._size == 0
+
+    def _len_(self) -> int:
+        return self._size
+
+    def remove_by_condition(self, predicate) -> bool:
+        prev = None
+        current = self.head
+        while current:
+            if predicate(current.data):
+                if prev:
+                    prev.next = current.next
+                else:
+                    self.head = current.next
+                if current is self.tail:
+                    self.tail = prev
+                self._size -= 1
+                return True
+            prev = current
+            current = current.next
+        return False
+
+# ── Stack berbasis Linked List ───────────────────────────────
+class Stack:
+    def _init_(self, kapasitas=10):
+        self.top: Optional[LLNode] = None
+        self._size: int = 0
+        self.kapasitas = kapasitas
+
+    def push(self, data) -> bool:
+        if self._size >= self.kapasitas:
+            return False
+        new_node = LLNode(data)
+        new_node.next = self.top
+        self.top = new_node
+        self._size += 1
+        return True
+
+    def pop(self):
+        if self.top is None:
+            return None
+        data = self.top.data
+        self.top = self.top.next
+        self._size -= 1
+        return data
+
+    def remove_by_condition(self, predicate) -> bool:
+        prev = None
+        current = self.top
+        while current:
+            if predicate(current.data):
+                if prev:
+                    prev.next = current.next
+                else:
+                    self.top = current.next
+                self._size -= 1
+                return True
+            prev = current
+            current = current.next
+        return False
