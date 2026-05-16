@@ -1,0 +1,34 @@
+# ── Graph Rekomendasi (implementasikan) ──────────────────────
+class GraphRekomendasi:
+    def __init__(self):
+        self.adj: Dict[str, List[Tuple[str, int]]] = {}  # kode -> [(kode, freq)]
+
+    def add_copurchase(self, kode_a: str, kode_b: str) -> None:
+        if kode_a not in self.adj:
+            self.adj[kode_a] = []
+        for i, (kode, freq) in enumerate(self.adj[kode_a]):
+            if kode == kode_b:
+                self.adj[kode_a][i] = (kode, freq + 1)
+                return
+        self.adj[kode_a].append((kode_b, 1))
+
+    def rekomendasi(self, kode_produk: str, max_hop: int = 2) -> List[str]:
+        if kode_produk not in self.adj:
+            return []
+        visited = set()
+        rekomendasi_list = []
+        q = Queue()
+        q.enqueue((kode_produk, 0))
+        visited.add(kode_produk)
+        while not q.is_empty():
+            kode, hop = q.dequeue()
+            if hop < max_hop and kode in self.adj:
+                for neighbor_kode, _ in self.adj[kode]:
+                    if neighbor_kode not in visited:
+                        visited.add(neighbor_kode)
+                        rekomendasi_list.append(neighbor_kode)
+                        q.enqueue((neighbor_kode, hop + 1))
+        return rekomendasi_list
+
+
+MODUL 3
