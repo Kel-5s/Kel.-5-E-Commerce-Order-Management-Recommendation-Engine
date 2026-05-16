@@ -3,5 +3,4 @@ Pada modul riwayat transaksi dalam sistem e-commerce, struktur data Stack diguna
 Stack digunakan untuk menyimpan transaksi terbaru, mengatur histori transaksi, serta mempermudah penghapusan data terakhir secara cepat. Implementasinya menggunakan Linked List agar penyimpanan lebih fleksibel dan proses penambahan maupun penghapusan data menjadi lebih efisien tanpa perlu menggeser elemen lain.
 
 Saat ada transaksi baru, sistem menjalankan operasi push dengan menambahkan data ke bagian paling atas stack. Sedangkan operasi pop digunakan untuk menghapus transaksi terbaru dengan memindahkan posisi top ke transaksi sebelumnya. Selain itu, terdapat fitur remove_by_condition() yang memungkinkan sistem menghapus transaksi berdasarkan kondisi tertentu, seperti ID atau status transaksi, dengan cara menelusuri linked list dan memutus node yang sesuai.
-
 Secara keseluruhan, penggunaan stack berbasis linked list membuat pengelolaan riwayat transaksi menjadi lebih cepat, fleksibel, dan efisien dalam proses penambahan maupun penghapusan data.
