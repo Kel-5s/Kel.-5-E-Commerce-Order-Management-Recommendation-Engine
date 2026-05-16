@@ -1,2 +1,2 @@
-Modul 2 ini menggunakan Binary Search Tree (BST) untuk membuat katalog produk pada sistem jualan online. 
-Kalau modul 1 dipakai untuk antrian pesanan dan riwayat aktivitas, modul 2 fokus ke manajemen data produk seperti mencari produk, update stok, dan menampilkan katalog.
+Modul 2 ini menggunakan Binary Search Tree (BST) untuk membuat katalog produk pada sistem jualan online. Kalau modul 1 dipakai untuk antrian
+pesanan dan riwayat aktivitas, modul 2 fokus ke manajemen data produk seperti mencari produk, update stok, dan menampilkan katalog.
